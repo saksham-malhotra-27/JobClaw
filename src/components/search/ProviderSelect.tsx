@@ -49,6 +49,14 @@ export function ProviderSelect({
         >
           Ollama
         </option>
+
+        <option
+          value={
+            CONSTANTS.LLM.PROVIDERS.GEMINI
+          }
+        >
+          Gemini
+        </option>
       </Select>
     </div>
   );
