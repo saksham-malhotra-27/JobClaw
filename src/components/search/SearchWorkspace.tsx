@@ -17,6 +17,9 @@ const DEFAULT_SYSTEM_PROMPT = [
   "- Set unspecified values to null or an empty array as required.",
   `- Default pagesPerSource to ${CONSTANTS.JOB_SEARCH.DEFAULT_PAGES_PER_SOURCE}.`,
   "- Do not add fields outside the schema.",
+  "- Set discoveryScope to \"ats\" when the user requests ATS sources only.",
+  "- Set discoveryScope to \"company_career\" when the user requests company career pages only.",
+  "- Set discoveryScope to \"both\" when both are requested or no source preference is specified.",
 ].join("\n");
 
 const DEFAULT_USER_PROMPT =
