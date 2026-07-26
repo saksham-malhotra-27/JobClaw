@@ -1,3 +1,4 @@
+import { GeminiProvider } from "@/agent/providers/gemini";
 import { OllamaProvider } from "@/agent/providers/ollama";
 import { OpenAIProvider } from "@/agent/providers/openai";
 import type { LlmProvider } from "@/agent/providers/provider";
@@ -13,6 +14,9 @@ export function createLlmProvider(
 
     case CONSTANTS.LLM.PROVIDERS.OLLAMA:
       return new OllamaProvider();
+
+    case CONSTANTS.LLM.PROVIDERS.GEMINI:
+      return new GeminiProvider();
 
     default: {
       const unsupportedProvider: never =

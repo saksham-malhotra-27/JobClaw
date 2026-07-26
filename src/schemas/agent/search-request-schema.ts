@@ -5,6 +5,7 @@ import { CONSTANTS } from "@/shared/constants";
 export const llmProviderSchema = z.enum([
   CONSTANTS.LLM.PROVIDERS.OPENAI,
   CONSTANTS.LLM.PROVIDERS.OLLAMA,
+  CONSTANTS.LLM.PROVIDERS.GEMINI,
 ]);
 
 export const searchRequestSchema = z.object({

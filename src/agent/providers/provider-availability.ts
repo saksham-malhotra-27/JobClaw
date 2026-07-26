@@ -30,6 +30,12 @@ async function isOllamaAvailable(): Promise<boolean> {
   }
 }
 
+function isGeminiAvailable(): boolean {
+  return Boolean(
+    process.env.GEMINI_API_KEY?.trim(),
+  );
+}
+
 export async function getProviderAvailability(): Promise<
   ProviderDetails[]
 > {
@@ -48,6 +54,12 @@ export async function getProviderAvailability(): Promise<
       label:
         CONSTANTS.LLM.PROVIDER_LABELS.OLLAMA,
       available: ollamaAvailable,
+    },
+    {
+      id: CONSTANTS.LLM.PROVIDERS.GEMINI,
+      label:
+        CONSTANTS.LLM.PROVIDER_LABELS.GEMINI,
+      available: isGeminiAvailable(),
     },
   ];
 }
